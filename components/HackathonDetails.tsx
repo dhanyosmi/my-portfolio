@@ -86,7 +86,7 @@ export default function HackathonDetails() {
             badge="Won #3 — BOT Chain Builder Challenge #1"
             proofs={[
               { label: 'Live App', href: 'https://swarm-escrow.vercel.app/' },
-              { label: 'Repo', href: 'https://github.com/hoBabu1/Swarm-Escrow-' },
+              { label: 'Repo', href: 'https://github.com/dhanyosmi/Swarm-Escrow-' },
               { label: 'Project X', href: 'https://x.com/SwarmEscrow' },
               { label: 'Demo Video', href: 'https://youtu.be/iULTOmTc1dA' },
               { label: 'Build Journey Thread', href: 'https://x.com/i/status/2074696729279201617' },
@@ -148,7 +148,7 @@ export default function HackathonDetails() {
             date="Jan 2026"
             proofs={[
               { label: 'Live Demo', href: 'https://solana-hackathon-one.vercel.app/' },
-              { label: 'GitHub', href: 'https://github.com/hoBabu1/solana-hackathon?tab=readme-ov-file' },
+              { label: 'GitHub', href: 'https://github.com/dhanyosmi/solana-hackathon?tab=readme-ov-file' },
               { label: 'Demo Video', href: 'https://www.youtube.com/watch?v=QaZ58nyLoy0' },
               { label: 'PPT Video', href: 'https://www.youtube.com/watch?v=sc2ds5biT8k' },
             ]}
@@ -175,7 +175,7 @@ export default function HackathonDetails() {
             date="Sept 2025"
             proofs={[
               { label: 'Live Demo', href: 'https://ai-on-chain-invoice.vercel.app/' },
-              { label: 'GitHub', href: 'https://github.com/hoBabu1/AI-on-chain-Invoice' },
+              { label: 'GitHub', href: 'https://github.com/dhanyosmi/AI-on-chain-Invoice' },
               { label: 'Demo Video', href: 'https://www.youtube.com/watch?v=uZyOd4QUZdE&feature=youtu.be' },
               { label: 'Certificate', href: 'https://drive.google.com/file/d/1Ev1UXbrkqr-Sh5w_6n6_zERgSMFp00qq/view?pli=1' },
             ]}

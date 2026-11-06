@@ -33,7 +33,7 @@ export default function Home() {
         <Gallery />
         <footer className="mx-auto w-full max-w-shell px-6 md:px-10 lg:px-14 py-8 border-t border-[var(--th-line)]">
           <p className="text-xs uppercase tracking-[0.08em] text-[var(--th-faint)]">
-            Last updated 13 Aug 2026
+            Last updated 6 Nov 2026
           </p>
         </footer>
       </main>

@@ -2,20 +2,13 @@
 
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaBars, FaTimes, FaGithub, FaLinkedin, FaTelegram, FaEnvelope, FaSun, FaMoon, FaChevronDown } from 'react-icons/fa';
+import { FaBars, FaTimes, FaGithub, FaLinkedin, FaTelegram, FaEnvelope, FaSun, FaMoon } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 
-const navItems: { name: string; href: string; children?: { name: string; tab: 'remote' | 'onsite' }[] }[] = [
+const navItems: { name: string; href: string }[] = [
   { name: 'About', href: 'about' },
   { name: 'Audit Contest', href: 'audit-contest' },
-  {
-    name: 'Experience',
-    href: 'experience',
-    children: [
-      { name: 'Remote', tab: 'remote' },
-      { name: 'Onsite', tab: 'onsite' },
-    ],
-  },
+  { name: 'Experience', href: 'experience' },
   { name: 'Projects', href: 'projects' },
   { name: 'Hackathons', href: 'hackathon' },
   { name: 'Blog', href: 'blog' },
@@ -31,7 +24,7 @@ const HIRE_ME_URL =
 
 const socials = [
   { name: 'Email', href: 'mailto:dhanyosmiresearcher@gmail.com', icon: <FaEnvelope /> },
-  { name: 'GitHub', href: 'https://github.com/hoBabu1', icon: <FaGithub /> },
+  { name: 'GitHub', href: 'https://github.com/dhanyosmi', icon: <FaGithub /> },
   { name: 'LinkedIn', href: 'https://www.linkedin.com/in/amankumarsah/', icon: <FaLinkedin /> },
   { name: 'X', href: 'https://x.com/thedhanyosmi', icon: <FaXTwitter /> },
   { name: 'Telegram', href: 'https://t.me/dhanyosmi', icon: <FaTelegram /> },
@@ -41,7 +34,6 @@ export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('about');
   const [isDark, setIsDark] = useState(false);
-  const [experienceOpen, setExperienceOpen] = useState(false);
 
   useEffect(() => {
     setIsDark(document.documentElement.classList.contains('dark'));
@@ -78,10 +70,6 @@ export default function Sidebar() {
     }
   };
 
-  const goToExperienceTab = (tab: 'remote' | 'onsite') => {
-    scrollToSection(`experience-${tab}`);
-  };
-
   const toggleTheme = () => {
     const next = !isDark;
     setIsDark(next);
@@ -108,34 +96,7 @@ export default function Sidebar() {
               )}
               {item.name}
             </button>
-            {item.children && (
-              <button
-                onClick={() => setExperienceOpen((v) => !v)}
-                aria-label={experienceOpen ? 'Collapse' : 'Expand'}
-                className="pr-2 py-1.5 text-[var(--th-muted)] hover:text-[var(--th-ink)] transition-colors duration-150"
-              >
-                <FaChevronDown
-                  className={`text-xs transition-transform duration-150 ${experienceOpen ? 'rotate-180' : ''}`}
-                />
-              </button>
-            )}
           </div>
-          {item.children && experienceOpen && (
-            <div className="flex flex-col gap-0.5 mt-0.5 mb-1">
-              {item.children.map((child) => (
-                <button
-                  key={child.tab}
-                  onClick={() => {
-                    goToExperienceTab(child.tab);
-                    onClick?.();
-                  }}
-                  className="text-left pl-8 pr-2 py-1 text-[15px] text-[var(--th-muted)] hover:text-[var(--th-ink)] transition-colors duration-150"
-                >
-                  {child.name}
-                </button>
-              ))}
-            </div>
-          )}
         </div>
       ))}
     </nav>

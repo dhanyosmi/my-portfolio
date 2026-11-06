@@ -3,91 +3,46 @@
 import ProofLink from './ProofLink';
 import Section from './Section';
 
-const remoteExperience = [
+// Newest first, matching the Experience table.
+const experience = [
+  {
+    id: 'detail-c3ihub',
+    type: 'Onsite' as const,
+    title: "Blockchain Developer",
+    company: "C3iHub, IIT Kanpur",
+    period: "Sep 2026 – Present",
+    achievements: [
+      {
+        text: "Working onsite as a Blockchain Developer at C3iHub, IIT Kanpur",
+        linkText: null,
+        link: null
+      }
+    ],
+    tags: ["Blockchain", "Hyperledger Fabric"]
+  },
   {
     id: 'detail-defilords',
+    type: 'Remote' as const,
     title: "Blockchain Engineer",
     company: "Defilords",
-    period: "June 2026 – Present",
+    period: "June 2026 – Sep 2026",
     achievements: [
       {
-        text: "Building and shipping blockchain infrastructure at Defilords",
+        text: "Re-architected the entire LP vault system",
+        linkText: null,
+        link: null
+      },
+      {
+        text: "Built the AI-assisted frontend and backend",
         linkText: null,
         link: null
       }
     ],
-    tags: ["Blockchain", "Solidity"]
+    tags: ["Solidity", "LP Vault", "DeFi", "AI", "Full-stack"]
   },
-  {
-    id: 'detail-bima-labs',
-    title: "Smart Contract Developer",
-    company: "Digichain (Bima Labs — DeFi Protocol)",
-    period: "Aug 2024 – Aug 2025",
-    achievements: [
-      {
-        text: "Implemented UUPS upgradable smart contracts using Succinct Protocol for on-chain ZKP verification",
-        linkText: "View Code",
-        link: "https://github.com/hoBabu1/ZKP-Verification-Upgradable-Smart-Contract-"
-      },
-      {
-        text: "Configured LayerZero v2 messaging and DVN with Foundry scripts for cross-chain debugging",
-        linkText: "View Scripts",
-        link: "https://github.com/hoBabu1/Debugging-Testing-Scripts-Bima/tree/master/LayerZero"
-      },
-      {
-        text: "Integrated Chainlink CCIP for lock/unlock mechanism in cross-chain USBD transfers",
-        linkText: "View Guide",
-        link: "https://github.com/hoBabu1/Chainlink-CCIP-Guide-Lock-Unlock"
-      },
-      {
-        text: "Developed PSM core logic with >95% code coverage using unit and fuzz tests in Foundry",
-        linkText: "View PR",
-        link: "https://github.com/Bima-Labs/bima-v1-core/pull/130/commits"
-      },
-      {
-        text: "Optimized Hardhat deployment scripts with automated contract verification",
-        linkText: "View Commit",
-        link: "https://github.com/Bima-Labs/bima-v1-core/pull/132/commits/f400e50615b502deb075a81439825891c479fddf"
-      },
-      {
-        text: "Deployed to 20+ blockchain networks and managed oracle/price-feed integrations",
-        linkText: "View Scripts",
-        link: "https://github.com/hoBabu1/Debugging-Testing-Scripts-Bima"
-      }
-    ],
-    tags: ["Solidity", "Foundry", "LayerZero", "Chainlink CCIP", "UUPS", "ZKP", "DeFi"]
-  },
-  {
-    id: 'detail-one-world-nation',
-    title: "Chart Analyst & Moderator",
-    company: "One World Nation",
-    period: "Oct 2022 – Aug 2023",
-    achievements: [
-      {
-        text: "Ran live crypto chart reading sessions, beginner to advanced, for 5000+ community members",
-        linkText: null,
-        link: null
-      },
-      {
-        text: "Grew community engagement by 33% through technical analysis insights",
-        linkText: null,
-        link: null
-      },
-      {
-        text: "Improved response time by 25% through moderation and user support",
-        linkText: null,
-        link: null
-      }
-    ],
-    certificate: "View Certificate",
-    certificateLink: "https://drive.google.com/file/d/1-MPUFw6vHKACoPtvHEMovW9j03ruyWJK/view?usp=sharing",
-    tags: ["Trading", "Technical Analysis", "Community"]
-  }
-];
-
-const onsiteExperience = [
   {
     id: 'detail-iccc-intern',
+    type: 'Onsite' as const,
     title: "ICCC Intern",
     company: "Patna Smart City Limited, Patna, Bihar",
     period: "December 2025",
@@ -116,11 +71,79 @@ const onsiteExperience = [
     certificate: "View Certificate",
     certificateLink: "https://drive.google.com/file/d/1Iwv9MM4WZ7VPafFBwjKsoTfumDYisYW8/view?usp=drivesdk",
     tags: ["IoT", "SCADA", "GIS", "Smart City"]
+  },
+  {
+    id: 'detail-bima-labs',
+    type: 'Remote' as const,
+    title: "Smart Contract Developer",
+    company: "Digichain (Bima Labs — DeFi Protocol)",
+    period: "Aug 2024 – Aug 2025",
+    achievements: [
+      {
+        text: "Implemented UUPS upgradable smart contracts using Succinct Protocol for on-chain ZKP verification",
+        linkText: "View Code",
+        link: "https://github.com/dhanyosmi/ZKP-Verification-Upgradable-Smart-Contract-"
+      },
+      {
+        text: "Configured LayerZero v2 messaging and DVN with Foundry scripts for cross-chain debugging",
+        linkText: "View Scripts",
+        link: "https://github.com/dhanyosmi/Debugging-Testing-Scripts-Bima/tree/master/LayerZero"
+      },
+      {
+        text: "Integrated Chainlink CCIP for lock/unlock mechanism in cross-chain USBD transfers",
+        linkText: "View Guide",
+        link: "https://github.com/dhanyosmi/Chainlink-CCIP-Guide-Lock-Unlock"
+      },
+      {
+        text: "Developed PSM core logic with >95% code coverage using unit and fuzz tests in Foundry",
+        linkText: "View PR",
+        link: "https://github.com/Bima-Labs/bima-v1-core/pull/130/commits"
+      },
+      {
+        text: "Optimized Hardhat deployment scripts with automated contract verification",
+        linkText: "View Commit",
+        link: "https://github.com/Bima-Labs/bima-v1-core/pull/132/commits/f400e50615b502deb075a81439825891c479fddf"
+      },
+      {
+        text: "Deployed to 20+ blockchain networks and managed oracle/price-feed integrations",
+        linkText: "View Scripts",
+        link: "https://github.com/dhanyosmi/Debugging-Testing-Scripts-Bima"
+      }
+    ],
+    tags: ["Solidity", "Foundry", "LayerZero", "Chainlink CCIP", "UUPS", "ZKP", "DeFi"]
+  },
+  {
+    id: 'detail-one-world-nation',
+    type: 'Remote' as const,
+    title: "Chart Analyst & Moderator",
+    company: "One World Nation",
+    period: "Oct 2022 – Aug 2023",
+    achievements: [
+      {
+        text: "Ran live crypto chart reading sessions, beginner to advanced, for 5000+ community members",
+        linkText: null,
+        link: null
+      },
+      {
+        text: "Grew community engagement by 33% through technical analysis insights",
+        linkText: null,
+        link: null
+      },
+      {
+        text: "Improved response time by 25% through moderation and user support",
+        linkText: null,
+        link: null
+      }
+    ],
+    certificate: "View Certificate",
+    certificateLink: "https://drive.google.com/file/d/1-MPUFw6vHKACoPtvHEMovW9j03ruyWJK/view?usp=sharing",
+    tags: ["Trading", "Technical Analysis", "Community"]
   }
 ];
 
 type ExpEntry = {
   id: string;
+  type: 'Remote' | 'Onsite';
   title: string;
   company: string;
   period: string;
@@ -137,7 +160,18 @@ function ExperienceEntry({ exp }: { exp: ExpEntry }) {
         <h4 className="text-lg font-semibold text-[var(--th-ink)]">
           {exp.title} <span className="font-normal text-[var(--th-muted)]">— {exp.company}</span>
         </h4>
-        <span className="text-sm text-[var(--th-faint)] whitespace-nowrap">{exp.period}</span>
+        <span className="flex items-center gap-2.5 text-sm text-[var(--th-faint)] whitespace-nowrap">
+          <span
+            className={`px-2.5 py-0.5 rounded-full text-xs font-medium border ${
+              exp.type === 'Onsite'
+                ? 'border-[var(--th-ink)] text-[var(--th-ink)]'
+                : 'border-[var(--th-line)] text-[var(--th-muted)]'
+            }`}
+          >
+            {exp.type}
+          </span>
+          {exp.period}
+        </span>
       </div>
 
       <ul className="space-y-3 mb-4 max-w-detail">
@@ -175,20 +209,8 @@ function ExperienceEntry({ exp }: { exp: ExpEntry }) {
 export default function ExperienceDetails() {
   return (
     <Section id="experience-details" title="Experience — Full Details">
-      <h3 className="text-[13px] font-bold text-[var(--th-faint)] uppercase tracking-[0.14em] mb-2 pt-2 border-t-2 border-[var(--th-ink)]">
-        Remote
-      </h3>
-      <div className="mb-10">
-        {remoteExperience.map((exp) => (
-          <ExperienceEntry key={exp.id} exp={exp} />
-        ))}
-      </div>
-
-      <h3 className="text-[13px] font-bold text-[var(--th-faint)] uppercase tracking-[0.14em] mb-2 pt-2 border-t-2 border-[var(--th-ink)]">
-        Onsite
-      </h3>
-      <div>
-        {onsiteExperience.map((exp) => (
+      <div className="border-t-2 border-[var(--th-ink)]">
+        {experience.map((exp) => (
           <ExperienceEntry key={exp.id} exp={exp} />
         ))}
       </div>

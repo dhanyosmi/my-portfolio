@@ -7,9 +7,10 @@ export default function About() {
     <Section id="about" title="About" width="measure" className="pt-2 pb-14">
       <div className="space-y-4 text-base leading-relaxed text-[var(--th-body)]">
         <p>
-          Web3 security researcher and trader. Currently working as a Blockchain Engineer at
-          Defilords. Previously a smart contract developer at Bima Labs, building and breaking
-          DeFi protocols.
+          Web3 security researcher and trader. Currently working as a Blockchain Developer at
+          C3iHub, IIT Kanpur. Previously a Blockchain Engineer at Defilords, re-architecting the
+          LP vault, and a smart contract developer at Bima Labs, building and breaking DeFi
+          protocols.
         </p>
         <p>
           Crypto trader for over a year. Earlier, ran chart reading sessions from beginner to

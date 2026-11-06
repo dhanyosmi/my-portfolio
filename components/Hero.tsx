@@ -64,9 +64,9 @@ export default function Hero() {
             Web3 Security Researcher &amp; Trader
           </h1>
           <p className="mt-5 text-lg md:text-xl text-[var(--th-body)] leading-relaxed max-w-2xl">
-            2+ years building and breaking smart contracts. Blockchain Engineer at
-            Defilords, previously a smart contract developer at Bima Labs. 3x hackathon
-            winner and an active crypto trader.
+            2+ years building and breaking smart contracts. Blockchain Developer at
+            C3iHub, IIT Kanpur, previously at Defilords (where I re-architected the LP
+            vault) and Bima Labs. 3x hackathon winner and an active crypto trader.
           </p>
 
           <div className="mt-7 flex flex-wrap items-center gap-3">

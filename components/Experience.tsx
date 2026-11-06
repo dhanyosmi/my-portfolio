@@ -1,72 +1,72 @@
 'use client';
 
-import Section, { SubHead, plural } from './Section';
+import Section, { plural } from './Section';
 import { thClass, tdClass, tdWrapClass, linkClass, tableClass, rowClass } from './tableStyles';
+
+type WorkType = 'Remote' | 'Onsite';
 
 type Row = {
   id: string;
+  type: WorkType;
   period: string;
   company: string;
   companyLink: string;
   role: string;
   stack: string;
-  proofLabel: string;
-  proofHref: string | null;
-  proofExternal: boolean;
   detailId: string;
 };
 
-const remoteRows: Row[] = [
+// Newest first. `type` drives the Remote/Onsite tag in the table.
+const rows: Row[] = [
+  {
+    id: 'c3ihub',
+    period: 'Sep 2026 – Present',
+    type: 'Onsite',
+    company: 'C3iHub, IIT Kanpur',
+    companyLink: 'https://c3ihub.iitk.ac.in/',
+    role: 'Blockchain Developer',
+    stack: 'Blockchain, Hyperledger Fabric',
+    detailId: 'detail-c3ihub',
+  },
   {
     id: 'defilords',
-    period: 'Jun 2026 – Present',
+    period: 'Jun 2026 – Sep 2026',
+    type: 'Remote',
     company: 'Defilords',
     companyLink: 'https://defilords.finance/',
     role: 'Blockchain Engineer',
-    stack: 'Blockchain, Solidity',
-    proofLabel: '-',
-    proofHref: null,
-    proofExternal: false,
+    stack: 'Solidity, LP Vaults, Full-stack',
     detailId: 'detail-defilords',
+  },
+  {
+    id: 'iccc-intern',
+    period: 'December 2025',
+    type: 'Onsite',
+    company: 'Smart City Patna Limited',
+    companyLink: 'https://www.smartpatna.co.in/home.aspx',
+    role: 'ICCC Intern',
+    stack: 'IoT, SCADA, GIS',
+    detailId: 'detail-iccc-intern',
   },
   {
     id: 'bima-labs',
     period: 'Aug 2024 – Aug 2025',
+    type: 'Remote',
     company: 'Bima Labs',
     companyLink: 'https://bima.money/',
     role: 'Smart Contract Developer',
     stack: 'Solidity, Foundry, LayerZero, Chainlink CCIP',
-    proofLabel: 'View',
-    proofHref: '#detail-bima-labs',
-    proofExternal: false,
     detailId: 'detail-bima-labs',
   },
   {
     id: 'one-world-nation',
     period: 'Oct 2022 – Aug 2023',
+    type: 'Remote',
     company: 'One World Nation',
     companyLink: 'https://www.linkedin.com/company/oneworldnation/?originalSubdomain=in',
     role: 'Chart Analyst & Moderator',
     stack: 'Trading, Technical Analysis, Community',
-    proofLabel: 'Link',
-    proofHref: 'https://drive.google.com/file/d/1-MPUFw6vHKACoPtvHEMovW9j03ruyWJK/view?usp=sharing',
-    proofExternal: true,
     detailId: 'detail-one-world-nation',
-  },
-];
-
-const onsiteRows: Row[] = [
-  {
-    id: 'iccc-intern',
-    period: 'December 2025',
-    company: 'Smart City Patna Limited',
-    companyLink: 'https://www.smartpatna.co.in/home.aspx',
-    role: 'ICCC Intern',
-    stack: 'IoT, SCADA, GIS',
-    proofLabel: 'Link',
-    proofHref: 'https://drive.google.com/file/d/1Iwv9MM4WZ7VPafFBwjKsoTfumDYisYW8/view?usp=drivesdk',
-    proofExternal: true,
-    detailId: 'detail-iccc-intern',
   },
 ];
 
@@ -76,21 +76,21 @@ function ExperienceTable({ rows }: { rows: Row[] }) {
       <table className={`${tableClass} min-w-[820px]`}>
         <colgroup>
           <col className="w-[4%]" />
-          <col className="w-[13%]" />
-          <col className="w-[15%]" />
-          <col className="w-[15%]" />
-          <col className="w-[23%]" />
-          <col className="w-[15%]" />
-          <col className="w-[15%]" />
+          <col className="w-[14%]" />
+          <col className="w-[17%]" />
+          <col className="w-[10%]" />
+          <col className="w-[17%]" />
+          <col className="w-[24%]" />
+          <col className="w-[14%]" />
         </colgroup>
         <thead>
           <tr>
             <th className={thClass}>#</th>
             <th className={thClass}>Period</th>
             <th className={thClass}>Company</th>
+            <th className={thClass}>Type</th>
             <th className={thClass}>Role</th>
             <th className={thClass}>Stack</th>
-            <th className={thClass}>Proof of Work</th>
             <th className={thClass}>More Info</th>
           </tr>
         </thead>
@@ -104,21 +104,11 @@ function ExperienceTable({ rows }: { rows: Row[] }) {
                   {row.company}
                 </a>
               </td>
+              <td className={tdClass} data-label="Type">
+                <TypeTag type={row.type} />
+              </td>
               <td className={tdWrapClass} data-label="Role">{row.role}</td>
               <td className={tdWrapClass} data-label="Stack">{row.stack}</td>
-              <td className={tdClass} data-label="Proof of Work">
-                {row.proofHref ? (
-                  <a
-                    href={row.proofHref}
-                    {...(row.proofExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                    className={linkClass}
-                  >
-                    {row.proofLabel}
-                  </a>
-                ) : (
-                  <span className="text-[var(--th-faint)]">-</span>
-                )}
-              </td>
               <td className={tdClass} data-label="More Info">
                 <a href={`#${row.detailId}`} className={linkClass}>
                   More Info
@@ -132,24 +122,28 @@ function ExperienceTable({ rows }: { rows: Row[] }) {
   );
 }
 
+function TypeTag({ type }: { type: WorkType }) {
+  return (
+    <span
+      className={`inline-block px-2.5 py-0.5 rounded-full text-xs font-medium border ${
+        type === 'Onsite'
+          ? 'border-[var(--th-ink)] text-[var(--th-ink)]'
+          : 'border-[var(--th-line)] text-[var(--th-muted)]'
+      }`}
+    >
+      {type}
+    </span>
+  );
+}
+
 export default function Experience() {
   return (
     <Section
       id="experience"
       title="Experience"
-      meta={plural(remoteRows.length + onsiteRows.length, 'role')}
+      meta={plural(rows.length, 'role')}
     >
-      <SubHead id="experience-remote" count={plural(remoteRows.length, 'role')}>
-        Remote
-      </SubHead>
-      <div className="mb-10">
-        <ExperienceTable rows={remoteRows} />
-      </div>
-
-      <SubHead id="experience-onsite" count={plural(onsiteRows.length, 'role')}>
-        Onsite
-      </SubHead>
-      <ExperienceTable rows={onsiteRows} />
+      <ExperienceTable rows={rows} />
     </Section>
   );
 }

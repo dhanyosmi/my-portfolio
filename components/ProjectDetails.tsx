@@ -71,9 +71,9 @@ export default function ProjectDetails() {
             subtitle="On-chain transfer agent for Cleanverse-verified real-world assets — Cleanverse Build Hackathon (RWA track), solo build"
             proofs={[
               { label: 'Live App', href: 'https://talon-cleanverse-hackathon.vercel.app' },
-              { label: 'GitHub', href: 'https://github.com/hoBabu1/Talon-Cleanverse-Hackathon' },
+              { label: 'GitHub', href: 'https://github.com/dhanyosmi/Talon-Cleanverse-Hackathon' },
               { label: 'Demo Video', href: 'https://youtu.be/CT_b-7mUf2U' },
-              { label: 'One-Pager', href: 'https://github.com/hoBabu1/Talon-Cleanverse-Hackathon/blob/main/SUMMARY.md' },
+              { label: 'One-Pager', href: 'https://github.com/dhanyosmi/Talon-Cleanverse-Hackathon/blob/main/SUMMARY.md' },
               { label: 'EscrowVault', href: 'https://testnet.monadscan.com/address/0xb634379B2afdF12830eaef694cFeaE80fB0dFFB7' },
             ]}
           >
@@ -132,7 +132,7 @@ export default function ProjectDetails() {
             title="Decentralized Stablecoin"
             subtitle="Algorithmic, over-collateralized stablecoin protocol"
             proofs={[
-              { label: 'GitHub', href: 'https://github.com/hoBabu1/Decentralized-Stable-Coin/tree/master' },
+              { label: 'GitHub', href: 'https://github.com/dhanyosmi/Decentralized-Stable-Coin/tree/master' },
               { label: 'Contract', href: 'https://sepolia.etherscan.io/address/0x3613ad520b0565e32233be06117633da2bc60ba7#code' },
             ]}
           >
@@ -160,7 +160,7 @@ export default function ProjectDetails() {
             title="Smart Contract Raffle"
             subtitle="Provably fair blockchain lottery system"
             proofs={[
-              { label: 'GitHub', href: 'https://github.com/hoBabu1/Raffle_Smart_Contract-Foundry-' },
+              { label: 'GitHub', href: 'https://github.com/dhanyosmi/Raffle_Smart_Contract-Foundry-' },
               { label: 'Contract', href: 'https://sepolia.etherscan.io/address/0xe7ae1641191a407b98638c5b2fbcc879f7ec5a92' },
             ]}
           >

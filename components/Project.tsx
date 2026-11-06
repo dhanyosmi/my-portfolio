@@ -32,7 +32,7 @@ const rows: Row[] = [
   {
     id: 'stablecoin',
     project: 'Decentralized Stablecoin',
-    projectLink: 'https://github.com/hoBabu1/Decentralized-Stable-Coin/tree/master',
+    projectLink: 'https://github.com/dhanyosmi/Decentralized-Stable-Coin/tree/master',
     category: 'Smart Contract',
     stack: 'Solidity, Foundry, Chainlink',
     detailId: 'detail-stablecoin',
@@ -40,7 +40,7 @@ const rows: Row[] = [
   {
     id: 'raffle',
     project: 'Smart Contract Raffle',
-    projectLink: 'https://github.com/hoBabu1/Raffle_Smart_Contract-Foundry-',
+    projectLink: 'https://github.com/dhanyosmi/Raffle_Smart_Contract-Foundry-',
     category: 'Smart Contract',
     stack: 'Solidity, Chainlink VRF, Foundry',
     detailId: 'detail-raffle',

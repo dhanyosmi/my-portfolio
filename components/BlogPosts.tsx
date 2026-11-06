@@ -37,7 +37,7 @@ const rows: Row[] = [
   {
     id: 'chainlink-ccip',
     title: 'Chainlink CCIP Implementation',
-    link: 'https://github.com/hoBabu1/Chainlink-CCIP-Guide-Lock-Unlock',
+    link: 'https://github.com/dhanyosmi/Chainlink-CCIP-Guide-Lock-Unlock',
     platform: 'GitHub',
     topics: 'Cross-Chain, Chainlink',
   },
